@@ -406,7 +406,6 @@ ul {
   .hero-image {
     width: 50%;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -427,12 +426,12 @@ ul {
   }
 
   .header {
-  padding: 15px 15px;
-}
+    padding: 15px 15px;
+  }
 
-.mega-menu-column{
+  .mega-menu-column {
     min-width: auto;
-}
+  }
 }
 /* Enhanced 3D effect with a subtle gradient overlay */
 .hero-image::after {
@@ -774,6 +773,18 @@ ul {
   }
 }
 
+@media screen and (max-width: 1500px) {
+  .mega-menu-row {
+    display: flex;
+    flex-grow: revert;
+    padding: 0;
+    flex-wrap: wrap;
+    width: 43rem;
+    height: 32rem;
+    overflow: auto;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .mega-menu {
     width: 700px;
@@ -1041,6 +1052,71 @@ ul {
 
 /* Responsive styles */
 @media screen and (max-width: 992px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: var(--white);
+    transition: all 0.5s ease;
+    padding: 80px 20px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1001;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .mega-menu,
+  .dropdown {
+    position: static;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+
+  .mega-menu.show,
+  .dropdown.show {
+    display: block;
+  }
+
+  .mega-menu-row {
+    flex-direction: column;
+  }
+
+  .mega-menu-column {
+    padding: 15px;
+  }
   .about-content {
     gap: 40px;
   }
@@ -1381,11 +1457,22 @@ ul {
     margin-bottom: 20px;
   }
 
+  .mega-menu-row {
+    display: flex;
+    flex-grow: revert;
+    padding: 0;
+    flex-wrap: wrap;
+    width: 43rem;
+    height: 32rem;
+    overflow: auto;
+  }
+
   .portfolio-gallery {
     grid-template-columns: 1fr;
   }
 
-  .about-section .container,.portfolio-section .container {
+  .about-section .container,
+  .portfolio-section .container {
     padding: 0px 10px;
   }
 }
@@ -1627,7 +1714,7 @@ ul {
     gap: 10px; /* Reduced from 15px to 10px */
   }
 
-  .footer-links .container{
+  .footer-links .container {
     padding: 0px 10px;
   }
 }
